@@ -19,8 +19,6 @@
 unsigned int state = 0;
 unsigned char temp1;
 
-char flag1 = 0;
-
 void TimerInit(void);
 
 int main(void)
@@ -48,14 +46,14 @@ int main(void)
             u16ByteFlags &= ~ReceiveGPSFlagMask;
         }
         
-        if( ReceiveMsgFlagMask == ( u16ByteFlags & ReceiveMsgFlagMask ) )
+        if( ReceivedMsgFlagMask == ( u16ByteFlags & ReceivedMsgFlagMask ) )
         {
             for(u8ForCountL = 0; ((GPS_Msg_Buff_Ptr - 1) >= u8ForCountL); u8ForCountL++)
             {
                 UART3PutChar( GPS_Msg_Buff[u8ForCountL] );
             }
 
-            u16ByteFlags &= ~ReceiveMsgFlagMask;
+            u16ByteFlags &= ~ReceivedMsgFlagMask;
         }
     }
 
