@@ -5,7 +5,7 @@
 #include "UART.h"
 
 volatile char cReceiveGPS;
-volatile uint8 ExecTransmit = 1;
+volatile uint8 ExecTransmit = 0;
 volatile uint16 u16ByteFlags;
 
 /////////////////////////////////////////////////////////////////////////
@@ -153,7 +153,7 @@ void UARTsInit(void)
     RPINR27bits.U4RXR   =	20;     //UART0 receive set to R 20
     RPOR12bits.RP25R    =	30;      //UART0 transmit set to R 25
 
-//9600 U1BRG = 416;
+//9600 U2BRG = 416;
 //11520 U1BRG = 34;
 
 //250000 U1BRG = 15;

@@ -284,7 +284,8 @@ void PrintTime(struct rtc_time* real_time) {
 //   - брой знаци на буфера
 //   - наличие на водещи нули
 // Връща 0 при успех, 1 при къс буфер или друга грешка
-char print_long(long value, char chars, char leadzero, char *buffer) {
+char print_long(long value, char chars, char leadzero, char *buffer) 
+{
    char *p;
    char negative;
    char tmp;
@@ -297,15 +298,19 @@ char print_long(long value, char chars, char leadzero, char *buffer) {
    // leadzero = 1 > празните полета отпред ще се '0'
 
    // нормализиране на числото - да е позитивно
-   if (value < 0) {
+   if (value < 0) 
+   {
       value = -value;
       negative = 1;
-   } else {
+   } 
+   else 
+   {
       negative = 0;
    }
 
    // писане на числото - отзад напред
-   for (i=chars; i>0; i--) {
+   for (i=chars; i>0; i--) 
+   {
        tmp = value % 10;
        value = value / 10;
        if (tmp) sign_pos = i-2;
@@ -314,9 +319,11 @@ char print_long(long value, char chars, char leadzero, char *buffer) {
    }
 
    // маха водещите нули, ако е указано
-   if (leadzero == 0) {
+   if (leadzero == 0) 
+   {
       p = buffer;
-      for (i=0; i<chars-1; i++) {
+      for (i=0; i<chars-1; i++) 
+      {
          tmp = *p;
          if (tmp != '0') goto print_long_xlz;
          tmp = ' ';
@@ -327,7 +334,8 @@ char print_long(long value, char chars, char leadzero, char *buffer) {
   print_long_xlz:
 
    // поставя знака на числото ( ако го има )
-   if ((negative) && (sign_pos < 0x10)) {
+   if ((negative) && (sign_pos < 0x10)) 
+   {
       if (leadzero) p = buffer;
       else          p = buffer + sign_pos;
       *p = '-';
@@ -337,15 +345,19 @@ char print_long(long value, char chars, char leadzero, char *buffer) {
 
 //---------------------------------------------------------------------------//
 // Извежда число от 0 до 99 в два знака, с водеща нула
-void print_00_99(unsigned char value, char *buffer) {
+void print_00_99(unsigned char value, char *buffer) 
+{
    char *p;
 
    p = buffer;
-   if (value > 99) {
+   if (value > 99) 
+   {
       *p = '?';
       p++;
       *p = '?';
-   } else {
+   } 
+   else 
+   {
       *p = '0' + value / 10;
       p++;
       *p = '0' + value % 10;
@@ -354,7 +366,8 @@ void print_00_99(unsigned char value, char *buffer) {
 
 //---------------------------------------------------------------------------//
 // Извежда число от 0 до 255 в три знака, с водещи нули и интервал отзад
-void print_000_255(unsigned char value, char *buffer) {
+void print_000_255(unsigned char value, char *buffer)
+{
    *buffer = '0' + value / 100;
    buffer++;
    value = value % 100;

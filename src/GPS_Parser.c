@@ -7,7 +7,7 @@ static uint8    GPS_Rd_Ptr;
 
 // last read message variables
 static struct rtc_time gps_rtc;
-static struct TLocation last_gps_location;
+        struct TLocation last_gps_location;
 static unsigned char coord_error;
 
 static unsigned char gps_tmp_valide_mark;

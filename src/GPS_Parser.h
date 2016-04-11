@@ -19,6 +19,8 @@ extern char     GPS_Msg_Buff[GPSMsgLengh];
 extern uint8    GPS_Msg_Buff_Ptr;         // = 0 - waiting for '$'
 //extern uint8    GPS_Rd_Ptr;
 
+extern struct TLocation last_gps_location;
+
 struct rtc_time 
 {
     uint8    hours;

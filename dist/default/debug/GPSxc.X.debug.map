@@ -6,7 +6,7 @@ Tool Name:
 Command:
   -p24FJ256GB108 \
   -o \
-  dist/default/production/GPSxc.X.production.elf \
+  dist/default/debug/GPSxc.X.debug.elf \
   -Lc:/program files (x86)/microchip/xc16/v1.26/bin/bin/.. \
   -Lc:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib \
   -Lc:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/PIC24E \
@@ -21,14 +21,22 @@ Command:
   -Lc:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/dsPIC33F \
   -Lc:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/src/GPS.o \
-  build/default/production/src/Time.o \
-  build/default/production/src/GPIOx.o \
-  build/default/production/src/UART.o \
-  build/default/production/src/GPS_Parser.o \
-  build/default/production/src/GPS_Utilies.o \
+  build/default/debug/src/GPS.o \
+  build/default/debug/src/Time.o \
+  build/default/debug/src/GPIOx.o \
+  build/default/debug/src/UART.o \
+  build/default/debug/src/GPS_Parser.o \
+  build/default/debug/src/GPS_Utilies.o \
+  -TC:\\Users\\ferdok9\\AppData\\Local\\Temp\\tmp00000008.00 \
+  -TC:\\Users\\ferdok9\\AppData\\Local\\Temp\\tmp00000008.01 \
+  -TC:\\Users\\ferdok9\\AppData\\Local\\Temp\\tmp00000008.02 \
+  -TC:\\Users\\ferdok9\\AppData\\Local\\Temp\\tmp00000008.03 \
+  -TC:\\Users\\ferdok9\\AppData\\Local\\Temp\\tmp00000008.04 \
   --defsym=__MPLAB_BUILD=1 \
-  -Tp24FJ256GB108.gld.00 \
+  --defsym=__MPLAB_DEBUG=1 \
+  --defsym=__DEBUG=1 \
+  --defsym=__MPLAB_DEBUGGER_PK3=1 \
+  -Tp24FJ256GB108.gld.05 \
   --stack=16 \
   --check-sections \
   --data-init \
@@ -40,10 +48,10 @@ Command:
   --stackguard=16 \
   --no-force-link \
   --smart-io \
-  -Map=dist/default/production/GPSxc.X.production.map \
+  -Map=dist/default/debug/GPSxc.X.debug.map \
   --report-mem \
   --memorysummary \
-  dist/default/production/memoryfile.xml \
+  dist/default/debug/memoryfile.xml \
   -start-group \
   --library=lega-pic30-elf \
   --library=m-elf \
@@ -53,31 +61,31 @@ Command:
 Archive member included because of file (symbol)
 
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ReadUART1.o)
-                              build/default/production/src/UART.o (_ReadUART1)
+                              build/default/debug/src/UART.o (_ReadUART1)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ReadUART2.o)
-                              build/default/production/src/UART.o (_ReadUART2)
+                              build/default/debug/src/UART.o (_ReadUART2)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ReadUART3.o)
-                              build/default/production/src/UART.o (_ReadUART3)
+                              build/default/debug/src/UART.o (_ReadUART3)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ReadUART4.o)
-                              build/default/production/src/UART.o (_ReadUART4)
+                              build/default/debug/src/UART.o (_ReadUART4)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(WriteUART1.o)
-                              build/default/production/src/UART.o (_WriteUART1)
+                              build/default/debug/src/UART.o (_WriteUART1)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(WriteUART2.o)
-                              build/default/production/src/UART.o (_WriteUART2)
+                              build/default/debug/src/UART.o (_WriteUART2)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
                               (__resetPRI)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
                               c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o) (__data_init_standard)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\libm-elf.a(divsi3.eo)
-                              build/default/production/src/GPS_Parser.o (___divsi3)
+                              build/default/debug/src/GPS_Parser.o (___divsi3)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\libm-elf.a(modsi3.eo)
-                              build/default/production/src/GPS_Utilies.o (___modsi3)
+                              build/default/debug/src/GPS_Utilies.o (___modsi3)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
-                              build/default/production/src/GPS_Parser.o (___udivsi3)
+                              build/default/debug/src/GPS_Parser.o (___udivsi3)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
-                              build/default/production/src/GPS_Parser.o (___umodsi3)
+                              build/default/debug/src/GPS_Parser.o (___umodsi3)
 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-elf.a(memcmp.XXeo)
-                              build/default/production/src/GPS_Parser.o (_memcmp)
+                              build/default/debug/src/GPS_Parser.o (_memcmp)
 
 
 xc16-ld 1.26 (A)
@@ -88,12 +96,12 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x18e           0x255  (597)
 .const                       0x38e                 0xc            0x12  (18)
-.text                        0x39a               0xf7a          0x1737  (5943)
-.dinit                      0x1314                0x1a            0x27  (39)
-.text                       0x132e                 0xe            0x15  (21)
-.shared.dinit               0x133c                 0x2             0x3  (3)
+.text                        0x39a               0xf72          0x172b  (5931)
+.dinit                      0x130c                0x1a            0x27  (39)
+.text                       0x1326                 0xe            0x15  (21)
+.shared.dinit               0x1334                 0x2             0x3  (3)
 
-                 Total program memory used (bytes):         0x19dd  (6621) 2%
+                 Total program memory used (bytes):         0x19d1  (6609) 2%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0xfc]
@@ -111,10 +119,15 @@ Data Memory  [Origin = 0x800, Length = 0x4000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0            0x14  (20)
-.bss                         0x814                   0            0x94  (148)
+reserve_data_0x800           0x800                0x20            0x20  (32)
+reserve_data_0x820           0x820                 0x2             0x2  (2)
+reserve_data_0x822           0x822                 0x2             0x2  (2)
+reserve_data_0x824           0x824                 0x2             0x2  (2)
+reserve_data_0x826           0x826                0x2a            0x2a  (42)
+.nbss                        0x850                   0            0x14  (20)
+.bss                         0x864                   0            0x94  (148)
 
-                 Total data memory used (bytes):           0xa8  (168) 1%
+                 Total data memory used (bytes):           0xf8  (248) 1%
 
 
 Dynamic Memory Usage
@@ -122,32 +135,32 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x8a8                              0x3f58  (16216)
+stack                        0x8f8                              0x3f08  (16136)
 
-                 Maximum dynamic memory (bytes):         0x3f58  (16216)
+                 Maximum dynamic memory (bytes):         0x3f08  (16136)
 
 
 External Symbols in Data Memory (by address):
 
-                    0x0800                  _GPS_Msg_Buff_Ptr
-                    0x080c                  _state
-                    0x080e                  _temp1
-                    0x0810                  _cReceiveGPS
-                    0x0811                  _ExecTransmit
-                    0x0812                  _u16ByteFlags
-                    0x0814                  _GPS_Msg_Buff
-                    0x089a                  _last_gps_location
+                    0x0850                  _GPS_Msg_Buff_Ptr
+                    0x085c                  _state
+                    0x085e                  _temp1
+                    0x0860                  _cReceiveGPS
+                    0x0861                  _ExecTransmit
+                    0x0862                  _u16ByteFlags
+                    0x0864                  _GPS_Msg_Buff
+                    0x08ea                  _last_gps_location
 
 External Symbols in Data Memory (by name):
 
-                    0x0811                  _ExecTransmit
-                    0x0814                  _GPS_Msg_Buff
-                    0x0800                  _GPS_Msg_Buff_Ptr
-                    0x0810                  _cReceiveGPS
-                    0x089a                  _last_gps_location
-                    0x080c                  _state
-                    0x080e                  _temp1
-                    0x0812                  _u16ByteFlags
+                    0x0861                  _ExecTransmit
+                    0x0864                  _GPS_Msg_Buff
+                    0x0850                  _GPS_Msg_Buff_Ptr
+                    0x0860                  _cReceiveGPS
+                    0x08ea                  _last_gps_location
+                    0x085c                  _state
+                    0x085e                  _temp1
+                    0x0862                  _u16ByteFlags
 
 External Symbols in Program Memory (by address):
 
@@ -194,20 +207,20 @@ External Symbols in Program Memory (by address):
                   0x0011c0                  _UARTsInit
                   0x001252                  _RepeaterProcessEvents
                   0x001268                  _main
-                  0x0012dc                  _TimerInit
-                  0x001300                  __T1Interrupt
-                  0x00132e                  _LedInit
+                  0x0012d4                  _TimerInit
+                  0x0012f8                  __T1Interrupt
+                  0x001326                  _LedInit
 
 External Symbols in Program Memory (by name):
 
                   0x00039a                  _GPS_ReceiveChar
-                  0x00132e                  _LedInit
+                  0x001326                  _LedInit
                   0x0002ac                  _ReadUART1
                   0x0002be                  _ReadUART2
                   0x0002d0                  _ReadUART3
                   0x0002e2                  _ReadUART4
                   0x001252                  _RepeaterProcessEvents
-                  0x0012dc                  _TimerInit
+                  0x0012d4                  _TimerInit
                   0x001046                  _UART1GetChar
                   0x00102e                  _UART1PutChar
                   0x001078                  _UART2GetChar
@@ -220,7 +233,7 @@ External Symbols in Program Memory (by name):
                   0x0002f4                  _WriteUART1
                   0x000302                  _WriteUART2
                   0x0002a8                  __DefaultInterrupt
-                  0x001300                  __T1Interrupt
+                  0x0012f8                  __T1Interrupt
                   0x0010f4                  __U1RXInterrupt
                   0x001124                  __U2RXInterrupt
                   0x001160                  __U3RXInterrupt
@@ -263,13 +276,41 @@ CONFIG1          0x02abfe           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/src/GPS.o
-LOAD build/default/production/src/Time.o
-LOAD build/default/production/src/GPIOx.o
-LOAD build/default/production/src/UART.o
-LOAD build/default/production/src/GPS_Parser.o
-LOAD build/default/production/src/GPS_Utilies.o
+LOAD build/default/debug/src/GPS.o
+LOAD build/default/debug/src/Time.o
+LOAD build/default/debug/src/GPIOx.o
+LOAD build/default/debug/src/UART.o
+LOAD build/default/debug/src/GPS_Parser.o
+LOAD build/default/debug/src/GPS_Utilies.o
+
+reserve_data_0x800
+                    0x0800         0x20
+                    0x0820                  . = 0x20
+ *fill*             0x0800         0x2000
+
+reserve_data_0x820
+                    0x0820          0x2
+                    0x0822                  . = 0x2
+ *fill*             0x0820          0x200
+
+reserve_data_0x822
+                    0x0822          0x2
+                    0x0824                  . = 0x2
+ *fill*             0x0822          0x200
+
+reserve_data_0x824
+                    0x0824          0x2
+                    0x0826                  . = 0x2
+ *fill*             0x0824          0x200
+
+reserve_data_0x826
+                    0x0826         0x2a
+                    0x0850                  . = 0x2a
+ *fill*             0x0826         0x2a00
                     0x0001                  __MPLAB_BUILD = 0x1
+                    0x0001                  __MPLAB_DEBUG = 0x1
+                    0x0001                  __DEBUG = 0x1
+                    0x0001                  __MPLAB_DEBUGGER_PK3 = 0x1
 LOAD c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a
 LOAD c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\libfx-elf.a
                     0x2abfa                  __CONFIG3 = 0x2abfa
@@ -346,49 +387,49 @@ __CONFIG1
 
 .debug_info       0x000000       0x4058
  *(.debug_info)
- .debug_info      0x000000        0x427 build/default/production/src/GPS.o
- .debug_info      0x000427        0x703 build/default/production/src/Time.o
- .debug_info      0x000b2a        0x420 build/default/production/src/GPIOx.o
- .debug_info      0x000f4a       0x23bb build/default/production/src/UART.o
- .debug_info      0x003305        0x8c7 build/default/production/src/GPS_Parser.o
- .debug_info      0x003bcc        0x48c build/default/production/src/GPS_Utilies.o
+ .debug_info      0x000000        0x427 build/default/debug/src/GPS.o
+ .debug_info      0x000427        0x703 build/default/debug/src/Time.o
+ .debug_info      0x000b2a        0x420 build/default/debug/src/GPIOx.o
+ .debug_info      0x000f4a       0x23bb build/default/debug/src/UART.o
+ .debug_info      0x003305        0x8c7 build/default/debug/src/GPS_Parser.o
+ .debug_info      0x003bcc        0x48c build/default/debug/src/GPS_Utilies.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x5fb
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x11d build/default/production/src/GPS.o
- .debug_abbrev    0x00011d         0xb8 build/default/production/src/Time.o
- .debug_abbrev    0x0001d5         0x7d build/default/production/src/GPIOx.o
- .debug_abbrev    0x000252        0x15f build/default/production/src/UART.o
- .debug_abbrev    0x0003b1        0x153 build/default/production/src/GPS_Parser.o
- .debug_abbrev    0x000504         0xf7 build/default/production/src/GPS_Utilies.o
+ .debug_abbrev    0x000000        0x11d build/default/debug/src/GPS.o
+ .debug_abbrev    0x00011d         0xb8 build/default/debug/src/Time.o
+ .debug_abbrev    0x0001d5         0x7d build/default/debug/src/GPIOx.o
+ .debug_abbrev    0x000252        0x15f build/default/debug/src/UART.o
+ .debug_abbrev    0x0003b1        0x153 build/default/debug/src/GPS_Parser.o
+ .debug_abbrev    0x000504         0xf7 build/default/debug/src/GPS_Utilies.o
 
-.debug_line       0x000000        0x56d
+.debug_line       0x000000        0x56c
  *(.debug_line)
- .debug_line      0x000000         0xc7 build/default/production/src/GPS.o
- .debug_line      0x0000c7         0x9e build/default/production/src/Time.o
- .debug_line      0x000165         0x99 build/default/production/src/GPIOx.o
- .debug_line      0x0001fe        0x10c build/default/production/src/UART.o
- .debug_line      0x00030a        0x1a1 build/default/production/src/GPS_Parser.o
- .debug_line      0x0004ab         0xc2 build/default/production/src/GPS_Utilies.o
+ .debug_line      0x000000         0xc6 build/default/debug/src/GPS.o
+ .debug_line      0x0000c6         0x9e build/default/debug/src/Time.o
+ .debug_line      0x000164         0x99 build/default/debug/src/GPIOx.o
+ .debug_line      0x0001fd        0x10c build/default/debug/src/UART.o
+ .debug_line      0x000309        0x1a1 build/default/debug/src/GPS_Parser.o
+ .debug_line      0x0004aa         0xc2 build/default/debug/src/GPS_Utilies.o
 
 .debug_frame      0x000000        0x642
  *(.debug_frame)
- .debug_frame     0x000000         0x30 build/default/production/src/GPS.o
- .debug_frame     0x000030         0x4c build/default/production/src/Time.o
- .debug_frame     0x00007c         0x30 build/default/production/src/GPIOx.o
- .debug_frame     0x0000ac        0x23c build/default/production/src/UART.o
- .debug_frame     0x0002e8        0x212 build/default/production/src/GPS_Parser.o
- .debug_frame     0x0004fa        0x148 build/default/production/src/GPS_Utilies.o
+ .debug_frame     0x000000         0x30 build/default/debug/src/GPS.o
+ .debug_frame     0x000030         0x4c build/default/debug/src/Time.o
+ .debug_frame     0x00007c         0x30 build/default/debug/src/GPIOx.o
+ .debug_frame     0x0000ac        0x23c build/default/debug/src/UART.o
+ .debug_frame     0x0002e8        0x212 build/default/debug/src/GPS_Parser.o
+ .debug_frame     0x0004fa        0x148 build/default/debug/src/GPS_Utilies.o
 
 .debug_str        0x000000        0x252
  *(.debug_str)
- .debug_str       0x000000         0x4a build/default/production/src/GPS.o
- .debug_str       0x00004a         0x25 build/default/production/src/Time.o
- .debug_str       0x00006f         0x28 build/default/production/src/GPIOx.o
- .debug_str       0x000097        0x172 build/default/production/src/UART.o
- .debug_str       0x000209         0x3c build/default/production/src/GPS_Parser.o
- .debug_str       0x000245          0xd build/default/production/src/GPS_Utilies.o
+ .debug_str       0x000000         0x4a build/default/debug/src/GPS.o
+ .debug_str       0x00004a         0x25 build/default/debug/src/Time.o
+ .debug_str       0x00006f         0x28 build/default/debug/src/GPIOx.o
+ .debug_str       0x000097        0x172 build/default/debug/src/UART.o
+ .debug_str       0x000209         0x3c build/default/debug/src/GPS_Parser.o
+ .debug_str       0x000245          0xd build/default/debug/src/GPS_Utilies.o
 
 .debug_loc
  *(.debug_loc)
@@ -400,17 +441,17 @@ __CONFIG1
                   0x000000        0x2ed
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x2f build/default/production/src/GPS.o
+                  0x000000         0x2f build/default/debug/src/GPS.o
  .debug_pubnames
-                  0x00002f         0x31 build/default/production/src/Time.o
+                  0x00002f         0x31 build/default/debug/src/Time.o
  .debug_pubnames
-                  0x000060         0x1e build/default/production/src/GPIOx.o
+                  0x000060         0x1e build/default/debug/src/GPIOx.o
  .debug_pubnames
-                  0x00007e        0x140 build/default/production/src/UART.o
+                  0x00007e        0x140 build/default/debug/src/UART.o
  .debug_pubnames
-                  0x0001be         0x62 build/default/production/src/GPS_Parser.o
+                  0x0001be         0x62 build/default/debug/src/GPS_Parser.o
  .debug_pubnames
-                  0x000220         0xcd build/default/production/src/GPS_Utilies.o
+                  0x000220         0xcd build/default/debug/src/GPS_Utilies.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -418,17 +459,17 @@ __CONFIG1
 .debug_aranges    0x000000         0x90
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/src/GPS.o
+                  0x000000         0x18 build/default/debug/src/GPS.o
  .debug_aranges
-                  0x000018         0x18 build/default/production/src/Time.o
+                  0x000018         0x18 build/default/debug/src/Time.o
  .debug_aranges
-                  0x000030         0x18 build/default/production/src/GPIOx.o
+                  0x000030         0x18 build/default/debug/src/GPIOx.o
  .debug_aranges
-                  0x000048         0x18 build/default/production/src/UART.o
+                  0x000048         0x18 build/default/debug/src/UART.o
  .debug_aranges
-                  0x000060         0x18 build/default/production/src/GPS_Parser.o
+                  0x000060         0x18 build/default/debug/src/GPS_Parser.o
  .debug_aranges
-                  0x000078         0x18 build/default/production/src/GPS_Utilies.o
+                  0x000078         0x18 build/default/debug/src/GPS_Utilies.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1526,7 +1567,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-pic30
 LOAD c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
-OUTPUT(dist/default/production/GPSxc.X.production.elf elf32-pic30)
+OUTPUT(dist/default/debug/GPSxc.X.debug.elf elf32-pic30)
 LOAD default_isr
 LOAD data_init
 LOAD shared_data_init
@@ -1534,32 +1575,32 @@ LOAD shared_data_init
 .debug_pubtypes
                   0x000090        0x420
  .debug_pubtypes
-                  0x000090         0x3d build/default/production/src/GPS.o
+                  0x000090         0x3d build/default/debug/src/GPS.o
  .debug_pubtypes
-                  0x0000cd         0x88 build/default/production/src/Time.o
+                  0x0000cd         0x88 build/default/debug/src/Time.o
  .debug_pubtypes
-                  0x000155         0x8e build/default/production/src/GPIOx.o
+                  0x000155         0x8e build/default/debug/src/GPIOx.o
  .debug_pubtypes
-                  0x0001e3        0x28e build/default/production/src/UART.o
+                  0x0001e3        0x28e build/default/debug/src/UART.o
  .debug_pubtypes
-                  0x000471         0x2d build/default/production/src/GPS_Parser.o
+                  0x000471         0x2d build/default/debug/src/GPS_Parser.o
  .debug_pubtypes
-                  0x00049e         0x12 build/default/production/src/GPS_Utilies.o
+                  0x00049e         0x12 build/default/debug/src/GPS_Utilies.o
 
 __c30_signature
                   0x0004b0         0x72
  __c30_signature
-                  0x0004b0          0x6 build/default/production/src/GPS.o
+                  0x0004b0          0x6 build/default/debug/src/GPS.o
  __c30_signature
-                  0x0004b6          0x6 build/default/production/src/Time.o
+                  0x0004b6          0x6 build/default/debug/src/Time.o
  __c30_signature
-                  0x0004bc          0x6 build/default/production/src/GPIOx.o
+                  0x0004bc          0x6 build/default/debug/src/GPIOx.o
  __c30_signature
-                  0x0004c2          0x6 build/default/production/src/UART.o
+                  0x0004c2          0x6 build/default/debug/src/UART.o
  __c30_signature
-                  0x0004c8          0x6 build/default/production/src/GPS_Parser.o
+                  0x0004c8          0x6 build/default/debug/src/GPS_Parser.o
  __c30_signature
-                  0x0004ce          0x6 build/default/production/src/GPS_Utilies.o
+                  0x0004ce          0x6 build/default/debug/src/GPS_Utilies.o
  __c30_signature
                   0x0004d4          0x6 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ReadUART1.o)
  __c30_signature
@@ -1587,64 +1628,64 @@ __c30_signature
  __c30_signature
                   0x00051c          0x6 c:/program files (x86)/microchip/xc16/v1.26/bin/bin/../../lib\liblega-c-elf.a(memcmp.XXeo)
 
-.nbss               0x0800         0x14
- .nbss              0x0800          0xc build/default/production/src/GPS_Parser.o
-                    0x0800                  _GPS_Msg_Buff_Ptr
- .nbss              0x080c          0x4 build/default/production/src/GPS.o
-                    0x080c                  _state
-                    0x080e                  _temp1
- .nbss              0x0810          0x4 build/default/production/src/UART.o
-                    0x0810                  _cReceiveGPS
-                    0x0811                  _ExecTransmit
-                    0x0812                  _u16ByteFlags
+.nbss               0x0850         0x14
+ .nbss              0x0850          0xc build/default/debug/src/GPS_Parser.o
+                    0x0850                  _GPS_Msg_Buff_Ptr
+ .nbss              0x085c          0x4 build/default/debug/src/GPS.o
+                    0x085c                  _state
+                    0x085e                  _temp1
+ .nbss              0x0860          0x4 build/default/debug/src/UART.o
+                    0x0860                  _cReceiveGPS
+                    0x0861                  _ExecTransmit
+                    0x0862                  _u16ByteFlags
 
-.bss                0x0814         0x94
- .bss               0x0814         0x94 build/default/production/src/GPS_Parser.o
-                    0x0814                  _GPS_Msg_Buff
-                    0x089a                  _last_gps_location
+.bss                0x0864         0x94
+ .bss               0x0864         0x94 build/default/debug/src/GPS_Parser.o
+                    0x0864                  _GPS_Msg_Buff
+                    0x08ea                  _last_gps_location
 
 .config_JTAGEN    0x02abfe          0x2
  .config_JTAGEN
-                  0x02abfe          0x2 build/default/production/src/GPS.o
+                  0x02abfe          0x2 build/default/debug/src/GPS.o
 
 .config_IESO      0x02abfc          0x2
- .config_IESO     0x02abfc          0x2 build/default/production/src/GPS.o
+ .config_IESO     0x02abfc          0x2 build/default/debug/src/GPS.o
 
 .config_WPEND     0x02abfa          0x2
- .config_WPEND    0x02abfa          0x2 build/default/production/src/GPS.o
+ .config_WPEND    0x02abfa          0x2 build/default/debug/src/GPS.o
 
 .ivt._T1Interrupt
                   0x00001a          0x2
  .ivt._T1Interrupt
-                  0x00001a          0x2 build/default/production/src/Time.o
+                  0x00001a          0x2 build/default/debug/src/Time.o
 
 .ivt._U1RXInterrupt
                   0x00002a          0x2
  .ivt._U1RXInterrupt
-                  0x00002a          0x2 build/default/production/src/UART.o
+                  0x00002a          0x2 build/default/debug/src/UART.o
 
 .ivt._U2RXInterrupt
                   0x000050          0x2
  .ivt._U2RXInterrupt
-                  0x000050          0x2 build/default/production/src/UART.o
+                  0x000050          0x2 build/default/debug/src/UART.o
 
 .ivt._U3RXInterrupt
                   0x0000b8          0x2
  .ivt._U3RXInterrupt
-                  0x0000b8          0x2 build/default/production/src/UART.o
+                  0x0000b8          0x2 build/default/debug/src/UART.o
 
 .ivt._U4RXInterrupt
                   0x0000c4          0x2
  .ivt._U4RXInterrupt
-                  0x0000c4          0x2 build/default/production/src/UART.o
+                  0x0000c4          0x2 build/default/debug/src/UART.o
 
 .const              0x838e          0xc load address 0x00038e  
- .const             0x838e          0xc build/default/production/src/GPS_Parser.o
+ .const             0x838e          0xc build/default/debug/src/GPS_Parser.o
 
-.text             0x00039a        0xf7a
- .text            0x00039a        0x8fc build/default/production/src/GPS_Parser.o
+.text             0x00039a        0xf72
+ .text            0x00039a        0x8fc build/default/debug/src/GPS_Parser.o
                   0x00039a                  _GPS_ReceiveChar
- .text            0x000c96        0x398 build/default/production/src/GPS_Utilies.o
+ .text            0x000c96        0x398 build/default/debug/src/GPS_Utilies.o
                   0x000c96                  _get_ascii_hex
                   0x000cd2                  _get_ascii
                   0x000ce2                  _hex_to_ascii
@@ -1656,7 +1697,7 @@ __c30_signature
                   0x000ede                  _print_00_99
                   0x000f34                  _print_000_255
                   0x000fa2                  _print_0_255
- .text            0x00102e        0x23a build/default/production/src/UART.o
+ .text            0x00102e        0x23a build/default/debug/src/UART.o
                   0x00102e                  _UART1PutChar
                   0x001046                  _UART1GetChar
                   0x001060                  _UART2PutChar
@@ -1671,18 +1712,18 @@ __c30_signature
                   0x001190                  __U4RXInterrupt
                   0x0011c0                  _UARTsInit
                   0x001252                  _RepeaterProcessEvents
- .text            0x001268         0x74 build/default/production/src/GPS.o
+ .text            0x001268         0x6c build/default/debug/src/GPS.o
                   0x001268                  _main
- .text            0x0012dc         0x38 build/default/production/src/Time.o
-                  0x0012dc                  _TimerInit
-                  0x001300                  __T1Interrupt
+ .text            0x0012d4         0x38 build/default/debug/src/Time.o
+                  0x0012d4                  _TimerInit
+                  0x0012f8                  __T1Interrupt
 
-.dinit            0x001314         0x1a
- .dinit           0x001314         0x1a data_init
+.dinit            0x00130c         0x1a
+ .dinit           0x00130c         0x1a data_init
 
-.text             0x00132e          0xe
- .text            0x00132e          0xe build/default/production/src/GPIOx.o
-                  0x00132e                  _LedInit
+.text             0x001326          0xe
+ .text            0x001326          0xe build/default/debug/src/GPIOx.o
+                  0x001326                  _LedInit
 
-.shared.dinit     0x00133c          0x2
- .shared.dinit    0x00133c          0x2 shared_data_init
+.shared.dinit     0x001334          0x2
+ .shared.dinit    0x001334          0x2 shared_data_init

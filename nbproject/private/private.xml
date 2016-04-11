@@ -3,15 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/nbproject/Makefile-default.mk</file>
             <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/UART.c</file>
-            <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/GPIOx.h</file>
-            <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/Time.h</file>
-            <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/Time.c</file>
-            <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/GPIOx.c</file>
+            <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/GPS_Parser.h</file>
             <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/GPS.c</file>
-            <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/DataTypes.h</file>
             <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/UART.h</file>
+            <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/GPS_Parser.c</file>
+            <file>file:/F:/Chast_2/PROEKTI/GPS/XC/GPSxc.X/src/GPS_Utilies.c</file>
         </group>
     </open-files>
 </project-private>

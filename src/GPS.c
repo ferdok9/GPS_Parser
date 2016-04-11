@@ -11,7 +11,7 @@
 #include "UART.h"
 #include "GPIOx.h"
 #include "GPS_Parser.h"
-
+#include "GPS_Utilies.h"
 #include "timer.h"
 
 //volatile char cReceiveGPS = 0;
@@ -24,6 +24,7 @@ void TimerInit(void);
 int main(void)
 {
     uint8 u8ForCountL = 0;
+    char PrintBuf[16];
     //Disable Watch Dog Timer
     RCONbits.SWDTEN	 = 0;
 
@@ -46,13 +47,27 @@ int main(void)
             u16ByteFlags &= ~ReceiveGPSFlagMask;
         }
         
+//        if( ReceivedMsgFlagMask == ( u16ByteFlags & ReceivedMsgFlagMask ) )
+//        {
+//            for(u8ForCountL = 0; ((GPS_Msg_Buff_Ptr - 1) >= u8ForCountL); u8ForCountL++)
+//            {
+//                UART1PutChar( GPS_Msg_Buff[u8ForCountL] );
+//            }
+//
+//            u16ByteFlags &= ~ReceivedMsgFlagMask;
+//        }
+        
         if( ReceivedMsgFlagMask == ( u16ByteFlags & ReceivedMsgFlagMask ) )
         {
-            for(u8ForCountL = 0; ((GPS_Msg_Buff_Ptr - 1) >= u8ForCountL); u8ForCountL++)
-            {
-                UART3PutChar( GPS_Msg_Buff[u8ForCountL] );
-            }
 
+            print_long(last_gps_location.x,9,0,PrintBuf);
+            
+            UART1PutChar(13); UART1PutChar(10);
+            
+            for(u8ForCountL = 0; (8 >= u8ForCountL); u8ForCountL++)
+            {
+                UART1PutChar( PrintBuf[u8ForCountL] );
+            }
             u16ByteFlags &= ~ReceivedMsgFlagMask;
         }
     }
