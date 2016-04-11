@@ -88,12 +88,12 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x18e           0x255  (597)
 .const                       0x38e                 0xc            0x12  (18)
-.text                        0x39a               0xf7a          0x1737  (5943)
-.dinit                      0x1314                0x1a            0x27  (39)
-.text                       0x132e                 0xe            0x15  (21)
-.shared.dinit               0x133c                 0x2             0x3  (3)
+.text                        0x39a               0xf72          0x172b  (5931)
+.dinit                      0x130c                0x1a            0x27  (39)
+.text                       0x1326                 0xe            0x15  (21)
+.shared.dinit               0x1334                 0x2             0x3  (3)
 
-                 Total program memory used (bytes):         0x19dd  (6621) 2%
+                 Total program memory used (bytes):         0x19d1  (6609) 2%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0xfc]
@@ -194,20 +194,20 @@ External Symbols in Program Memory (by address):
                   0x0011c0                  _UARTsInit
                   0x001252                  _RepeaterProcessEvents
                   0x001268                  _main
-                  0x0012dc                  _TimerInit
-                  0x001300                  __T1Interrupt
-                  0x00132e                  _LedInit
+                  0x0012d4                  _TimerInit
+                  0x0012f8                  __T1Interrupt
+                  0x001326                  _LedInit
 
 External Symbols in Program Memory (by name):
 
                   0x00039a                  _GPS_ReceiveChar
-                  0x00132e                  _LedInit
+                  0x001326                  _LedInit
                   0x0002ac                  _ReadUART1
                   0x0002be                  _ReadUART2
                   0x0002d0                  _ReadUART3
                   0x0002e2                  _ReadUART4
                   0x001252                  _RepeaterProcessEvents
-                  0x0012dc                  _TimerInit
+                  0x0012d4                  _TimerInit
                   0x001046                  _UART1GetChar
                   0x00102e                  _UART1PutChar
                   0x001078                  _UART2GetChar
@@ -220,7 +220,7 @@ External Symbols in Program Memory (by name):
                   0x0002f4                  _WriteUART1
                   0x000302                  _WriteUART2
                   0x0002a8                  __DefaultInterrupt
-                  0x001300                  __T1Interrupt
+                  0x0012f8                  __T1Interrupt
                   0x0010f4                  __U1RXInterrupt
                   0x001124                  __U2RXInterrupt
                   0x001160                  __U3RXInterrupt
@@ -363,14 +363,14 @@ __CONFIG1
  .debug_abbrev    0x0003b1        0x153 build/default/production/src/GPS_Parser.o
  .debug_abbrev    0x000504         0xf7 build/default/production/src/GPS_Utilies.o
 
-.debug_line       0x000000        0x56d
+.debug_line       0x000000        0x56c
  *(.debug_line)
- .debug_line      0x000000         0xc7 build/default/production/src/GPS.o
- .debug_line      0x0000c7         0x9e build/default/production/src/Time.o
- .debug_line      0x000165         0x99 build/default/production/src/GPIOx.o
- .debug_line      0x0001fe        0x10c build/default/production/src/UART.o
- .debug_line      0x00030a        0x1a1 build/default/production/src/GPS_Parser.o
- .debug_line      0x0004ab         0xc2 build/default/production/src/GPS_Utilies.o
+ .debug_line      0x000000         0xc6 build/default/production/src/GPS.o
+ .debug_line      0x0000c6         0x9e build/default/production/src/Time.o
+ .debug_line      0x000164         0x99 build/default/production/src/GPIOx.o
+ .debug_line      0x0001fd        0x10c build/default/production/src/UART.o
+ .debug_line      0x000309        0x1a1 build/default/production/src/GPS_Parser.o
+ .debug_line      0x0004aa         0xc2 build/default/production/src/GPS_Utilies.o
 
 .debug_frame      0x000000        0x642
  *(.debug_frame)
@@ -1641,7 +1641,7 @@ __c30_signature
 .const              0x838e          0xc load address 0x00038e  
  .const             0x838e          0xc build/default/production/src/GPS_Parser.o
 
-.text             0x00039a        0xf7a
+.text             0x00039a        0xf72
  .text            0x00039a        0x8fc build/default/production/src/GPS_Parser.o
                   0x00039a                  _GPS_ReceiveChar
  .text            0x000c96        0x398 build/default/production/src/GPS_Utilies.o
@@ -1671,18 +1671,18 @@ __c30_signature
                   0x001190                  __U4RXInterrupt
                   0x0011c0                  _UARTsInit
                   0x001252                  _RepeaterProcessEvents
- .text            0x001268         0x74 build/default/production/src/GPS.o
+ .text            0x001268         0x6c build/default/production/src/GPS.o
                   0x001268                  _main
- .text            0x0012dc         0x38 build/default/production/src/Time.o
-                  0x0012dc                  _TimerInit
-                  0x001300                  __T1Interrupt
+ .text            0x0012d4         0x38 build/default/production/src/Time.o
+                  0x0012d4                  _TimerInit
+                  0x0012f8                  __T1Interrupt
 
-.dinit            0x001314         0x1a
- .dinit           0x001314         0x1a data_init
+.dinit            0x00130c         0x1a
+ .dinit           0x00130c         0x1a data_init
 
-.text             0x00132e          0xe
- .text            0x00132e          0xe build/default/production/src/GPIOx.o
-                  0x00132e                  _LedInit
+.text             0x001326          0xe
+ .text            0x001326          0xe build/default/production/src/GPIOx.o
+                  0x001326                  _LedInit
 
-.shared.dinit     0x00133c          0x2
- .shared.dinit    0x00133c          0x2 shared_data_init
+.shared.dinit     0x001334          0x2
+ .shared.dinit    0x001334          0x2 shared_data_init

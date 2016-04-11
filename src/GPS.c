@@ -46,7 +46,7 @@ int main(void)
             GPS_ReceiveChar(cReceiveGPS, GPS_Msg_Buff);
             u16ByteFlags &= ~ReceiveGPSFlagMask;
         }
-        
+        //asd
 //        if( ReceivedMsgFlagMask == ( u16ByteFlags & ReceivedMsgFlagMask ) )
 //        {
 //            for(u8ForCountL = 0; ((GPS_Msg_Buff_Ptr - 1) >= u8ForCountL); u8ForCountL++)
