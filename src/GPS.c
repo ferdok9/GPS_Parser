@@ -46,30 +46,30 @@ int main(void)
             GPS_ReceiveChar(cReceiveGPS, GPS_Msg_Buff);
             u16ByteFlags &= ~ReceiveGPSFlagMask;
         }
-        //asd
-//        if( ReceivedMsgFlagMask == ( u16ByteFlags & ReceivedMsgFlagMask ) )
-//        {
-//            for(u8ForCountL = 0; ((GPS_Msg_Buff_Ptr - 1) >= u8ForCountL); u8ForCountL++)
-//            {
-//                UART1PutChar( GPS_Msg_Buff[u8ForCountL] );
-//            }
-//
-//            u16ByteFlags &= ~ReceivedMsgFlagMask;
-//        }
-        
+
         if( ReceivedMsgFlagMask == ( u16ByteFlags & ReceivedMsgFlagMask ) )
         {
-
-            print_long(last_gps_location.x,9,0,PrintBuf);
-            
-            UART1PutChar(13); UART1PutChar(10);
-            
-            for(u8ForCountL = 0; (8 >= u8ForCountL); u8ForCountL++)
+            for(u8ForCountL = 0; ((GPS_Msg_Buff_Ptr - 1) >= u8ForCountL); u8ForCountL++)
             {
-                UART1PutChar( PrintBuf[u8ForCountL] );
+                UART1PutChar( GPS_Msg_Buff[u8ForCountL] );
             }
+
             u16ByteFlags &= ~ReceivedMsgFlagMask;
         }
+        
+//        if( ReceivedMsgFlagMask == ( u16ByteFlags & ReceivedMsgFlagMask ) )
+//        {
+//
+//            print_long(last_gps_location.x,9,0,PrintBuf);
+//            
+//            UART1PutChar(13); UART1PutChar(10);
+//            
+//            for(u8ForCountL = 0; (8 >= u8ForCountL); u8ForCountL++)
+//            {
+//                UART1PutChar( PrintBuf[u8ForCountL] );
+//            }
+//            u16ByteFlags &= ~ReceivedMsgFlagMask;
+//        }
     }
 
     return(0);
